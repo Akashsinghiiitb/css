@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Arpita ❤️</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .heart {
+      position: absolute;
+      color: red;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-r from-pink-500 via-red-500 to-purple-500 h-screen flex items-center justify-center overflow-hidden">
+
+  <!-- Main Card -->
+  <div class="text-center text-white animate-pulse">
+    <h1 class="text-5xl font-bold mb-4">💖 Arpita 💖</h1>
+    
+    <p class="text-xl mb-6">
+      You are the most beautiful part of my life ✨
+    </p>
+
+    <button onclick="showLove()" 
+      class="bg-white text-red-500 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-110 transition">
+      Click for Surprise ❤️
+    </button>
+
+    <p id="message" class="mt-6 text-2xl font-semibold hidden">
+      motiiiiiiiiiiiiiii mmotiiiiiiiiiiiiiii 💕
+    </p>
+  </div>
+
+  <!-- Floating Hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.innerHTML = "❤️";
+      heart.classList.add("heart");
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 20 + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+
+    function showLove() {
+      document.getElementById("message").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
